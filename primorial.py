@@ -1,6 +1,7 @@
 # primorial
 # denoted by "#", is a function from natural numbers to natural numbers similar to the factorial function, 
 # but rather than successively multiplying positive integers, the function only multiplies prime numbers. 
+# - Wikipedia
 p_list = []
 num = int(input("Enter a number: "))
 
