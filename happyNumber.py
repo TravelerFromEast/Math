@@ -1,22 +1,23 @@
 # happy number or not
-def f(num, memory = []):
+def f(num, memory = None):
+    if memory == None:
+        memory = set()
+
     if num == 1:
         return True
-    elif num > 1:
+    elif num in memory:
+        return False
+    else:
+        memory.add(num)
         sum = 0
-        memory.append(num)
         for x in str(num):
             sum += pow(int(x), 2)
-        if sum in memory:
-            return False
-        else:
-            memory.append(sum)
-            return f(sum)
+        return f(sum,memory)
  
 num = int(input("Enter a positive integr: "))
 
 if num <= 0:
-    print("please enter a psoitive integer")
+    print("please enter a positive integer")
 else:
     if f(num) == True:
         print("{} -> a happy number".format(num))
